@@ -1,0 +1,6 @@
+# Ensure No VPN is Active
+sudo docker exec -it app1 pkill openvpn
+sudo docker exec -it app2 pkill openvpn
+
+# Attempt to Access Web Server from `app2` Without VPN
+sudo docker exec -it app2 wget -qO- 172.17.0.2:8081
