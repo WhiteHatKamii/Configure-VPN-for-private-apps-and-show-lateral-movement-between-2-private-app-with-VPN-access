@@ -1,1 +1,8 @@
+# Stop any currently running Python server
+sudo docker exec -it app1 pkill python3
 
+# Start the Python HTTP server
+sudo docker exec -it app1 sh -c 'cd /var/www/html && nohup python3 -m http.server 8081 &'
+
+# Verify the Python HTTP server is running
+sudo docker exec -it app1 netstat -tuln | grep 8081
