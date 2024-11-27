@@ -1,4 +1,3 @@
-# Configure-VPN-for-private-apps-and-show-lateral-movement-between-2-private-app-with-VPN-access
 # Configure VPN for Private Apps and Show Lateral Movement Between 2 Private Apps with VPN Access
 
 ## Introduction
