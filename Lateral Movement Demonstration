@@ -1,0 +1,16 @@
+# Get IP Address of `app1`
+sudo docker exec -it app1 ip addr show eth0 | grep inet
+
+# Get IP Address of `app2`
+sudo docker exec -it app2 ip addr show eth0 | grep inet
+
+# Start Web Server on `app1`
+sudo docker exec -it app1 apk update
+sudo docker exec -it app1 apk add nginx
+sudo docker exec -it app1 nginx
+
+# Verify Web Server on `app1`
+sudo docker exec -it app1 wget -qO- 172.17.0.2
+
+# Access Web Server from `app2`
+sudo docker exec -it app2 wget -qO- 172.17.0.2:8081
